@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <canvas id="c"></canvas>
+  <script>
+    window.renderSvg = async (svgStr, size) => {
+      const canvas = document.getElementById('c');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      const blob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      return new Promise((resolve) => {
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0, size, size);
+          URL.revokeObjectURL(url);
+          resolve(canvas.toDataURL('image/png'));
+        };
+        img.src = url;
+      });
+    };
+  </script>
+</body>
+</html>

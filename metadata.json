@@ -1,0 +1,8 @@
+{
+  "name": "OrthoLog - Orthopedic Surgical Logbook",
+  "description": "Professional surgical logbook and audit suite for orthopedic surgeons with case records, radiology imaging, Google Drive backup, robust filtering, and complication/infection rate analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
